@@ -62,17 +62,17 @@ class ElementImage extends BaseElement
                     "Width",
                     _t(__CLASS__ . ".WIDTH", "Width"),
                     [
-                        "container" => "Content width",
-                        "full" => "Browser width",
+                        "container" => _t(__CLASS__ . ".CONTAINER_WIDTH", "Content width"),
+                        "full" => _t(__CLASS__ . ".BROWSER_WIDTH", "Browser width")
                     ]
                 ),
                 DropdownField::create(
                     "Height",
                     _t(__CLASS__ . ".HEIGHT", "Height"),
                     [
-                        "small" => "Small",
-                        "medium" => "Medium",
-                        "large" => "Large",
+                        "small" => _t(__CLASS__ . ".HEIGHT_SMALL", "Small"),
+                        "medium" => _t(__CLASS__ . ".HEIGHT_MEDIUM", "Medium"),
+                        "large" => _t(__CLASS__ . ".HEIGHT_LARGE", "Large")
                     ]
                 ),
                 UploadField::create(
