@@ -92,6 +92,7 @@ class ElementImage extends BaseElement
                 )
                     ->setFolderName($this->getFolderName() . "/" . $this->ID)
                     ->setAllowedExtensions($this->getAllowedFileTypes())
+                    ->setIsMultiUpload(false)
                     ->setDescription(
                         _t(
                             __CLASS__ . "ALLOWED_FILE_TYPES",
