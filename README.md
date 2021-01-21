@@ -1,6 +1,16 @@
 # Image element for Silverstripe
 
-Simple image element with some size controls
+Simple image element with some size controls.
+
+<img src="./docs/settings.png">
+
+## Features
+
++ Width setting
++ Granular height setting
++ Standard upload field image selection
+
+Your theme should provide a template to control the sizing selected.
 
 ## Requirements
 
