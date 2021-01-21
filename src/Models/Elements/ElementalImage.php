@@ -93,14 +93,14 @@ class ElementImage extends BaseElement
                     ->setFolderName($this->getFolderName() . "/" . $this->ID)
                     ->setAllowedExtensions($this->getAllowedFileTypes())
                     ->setDescription(
-                        sprintf(
-                            _t(
-                                __CLASS__ . "ALLOWED_FILE_TYPES",
-                                "Allowed file types: %s"
-                            ),
-                            implode(",", $this->getAllowedFileTypes())
+                        _t(
+                            __CLASS__ . "ALLOWED_FILE_TYPES",
+                            "Allowed file types: {types}",
+                            [
+                                'types' => implode(",", $this->getAllowedFileTypes())
+                            ]
                         )
-                    ),
+                    )
             ]);
         });
         return parent::getCMSFields();
