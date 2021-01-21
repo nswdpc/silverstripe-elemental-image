@@ -21,6 +21,8 @@ class ElementImage extends BaseElement
     private static $singular_name = "Image";
     private static $plural_name = "Images";
 
+    private static $allowed_file_types = ["jpg", "jpeg", "gif", "png", "webp"];
+
     public function getType()
     {
         return _t(__CLASS__ . ".BlockType", "Image");

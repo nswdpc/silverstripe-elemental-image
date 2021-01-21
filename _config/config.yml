@@ -1,4 +1,10 @@
 ---
 Name: nswdpc-elemental-image
 ---
-
+NSWDPC\Elemental\Models\Image\ElementalImage:
+  allowed_file_types:
+    - 'jpg'
+    - 'jpeg'
+    - 'gif'
+    - 'png'
+    - 'webp'
