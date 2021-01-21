@@ -11,7 +11,7 @@ use SilverStripe\Forms\DropdownField;
  */
 class ElementImage extends BaseElement
 {
-    private static $icon = "font-icon-block-banner";
+    private static $icon = "font-icon-image";
 
     private static $table_name = "ElementImage";
 
