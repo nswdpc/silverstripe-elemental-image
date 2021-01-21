@@ -2,6 +2,7 @@
 Name: nswdpc-elemental-image
 ---
 NSWDPC\Elemental\Models\Image\ElementalImage:
+  folder_name: 'images'
   allowed_file_types:
     - 'jpg'
     - 'jpeg'
