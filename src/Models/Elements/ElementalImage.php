@@ -48,7 +48,7 @@ class ElementImage extends BaseElement
     {
         $types = $this->config()->get("allowed_file_types");
         if (empty($types)) {
-            $types = $allowed_file_types;
+            $types = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
         }
         $types = array_unique($types);
         return $types;
