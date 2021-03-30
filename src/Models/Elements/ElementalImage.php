@@ -23,8 +23,6 @@ class ElementImage extends BaseElement
 
     private static $allowed_file_types = ["jpg", "jpeg", "gif", "png", "webp"];
 
-    private static $folder_name = "images";
-
     public function getType()
     {
         return _t(__CLASS__ . ".BlockType", "Image");
@@ -50,18 +48,10 @@ class ElementImage extends BaseElement
     {
         $types = $this->config()->get("allowed_file_types");
         if (empty($types)) {
-            $types = ["jpg", "jpeg", "gif", "png", "webp"];
+            $types = $allowed_file_types;
         }
         $types = array_unique($types);
         return $types;
-    }
-
-    public function getFolderName() {
-        $folder_name = $this->config()->get('folder_name');
-        if(!$folder_name) {
-            $folder_name = "images";
-        }
-        return $folder_name;
     }
 
     public function getCMSFields()
@@ -90,7 +80,6 @@ class ElementImage extends BaseElement
                     "Image",
                     _t(__CLASS__ . ".SLIDE_IMAGE", "Image")
                 )
-                    ->setFolderName($this->getFolderName() . "/" . $this->ID)
                     ->setAllowedExtensions($this->getAllowedFileTypes())
                     ->setIsMultiUpload(false)
                     ->setDescription(
