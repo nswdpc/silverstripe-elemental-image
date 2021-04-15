@@ -73,7 +73,8 @@ class ElementImage extends BaseElement
                     [
                         "small" => _t(__CLASS__ . ".HEIGHT_SMALL", "Small"),
                         "medium" => _t(__CLASS__ . ".HEIGHT_MEDIUM", "Medium"),
-                        "large" => _t(__CLASS__ . ".HEIGHT_LARGE", "Large")
+                        "large" => _t(__CLASS__ . ".HEIGHT_LARGE", "Large"),
+                        "original" => _t(__CLASS__ . ".HEIGHT_ORIGINAL", "Original")
                     ]
                 ),
                 UploadField::create(
