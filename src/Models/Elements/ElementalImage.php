@@ -31,6 +31,7 @@ class ElementImage extends BaseElement
     private static $db = [
         "Width" => "Varchar",
         "Height" => "Varchar",
+        'Caption' => 'Text',
     ];
 
     private static $has_one = [
@@ -81,17 +82,21 @@ class ElementImage extends BaseElement
                     "Image",
                     _t(__CLASS__ . ".SLIDE_IMAGE", "Image")
                 )
-                    ->setAllowedExtensions($this->getAllowedFileTypes())
-                    ->setIsMultiUpload(false)
-                    ->setDescription(
-                        _t(
-                            __CLASS__ . "ALLOWED_FILE_TYPES",
-                            "Allowed file types: {types}",
-                            [
-                                'types' => implode(",", $this->getAllowedFileTypes())
-                            ]
-                        )
+                ->setAllowedExtensions($this->getAllowedFileTypes())
+                ->setIsMultiUpload(false)
+                ->setDescription(
+                    _t(
+                        __CLASS__ . "ALLOWED_FILE_TYPES",
+                        "Allowed file types: {types}",
+                        [
+                            'types' => implode(",", $this->getAllowedFileTypes())
+                        ]
                     )
+                ),
+                TextareaField::create(
+                    'Caption',
+                    'Caption'
+                )
             ]);
         });
         return parent::getCMSFields();
