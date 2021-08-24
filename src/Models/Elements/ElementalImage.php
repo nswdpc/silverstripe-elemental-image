@@ -5,6 +5,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\TextareaField;
 
 /**
  * ElementImage adds an image with some config
