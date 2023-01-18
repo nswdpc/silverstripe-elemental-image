@@ -22,10 +22,10 @@
         }
     ],
     "require": {
-        "dnadesign/silverstripe-elemental": "^4.3.0"
+        "dnadesign/silverstripe-elemental": "^4.9.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7",
-        "friendsofphp/php-cs-fixer": "^2.18"
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^3"
     }
 }
