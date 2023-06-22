@@ -24,6 +24,14 @@ class ElementImage extends BaseElement
 
     private static $allowed_file_types = ["jpg", "jpeg", "gif", "png", "webp"];
 
+    const WIDTH_FULL = 'full';
+    const WIDTH_CONTAINER = 'container';
+
+    const HEIGHT_SMALL = 'small';
+    const HEIGHT_MEDIUM = 'medium';
+    const HEIGHT_LARGE = 'large';
+    const HEIGHT_ORIGINAL = 'original';
+
     public function getType()
     {
         return _t(__CLASS__ . ".BlockType", "Image");
@@ -65,18 +73,18 @@ class ElementImage extends BaseElement
                     "Width",
                     _t(__CLASS__ . ".WIDTH", "Width"),
                     [
-                        "container" => _t(__CLASS__ . ".CONTAINER_WIDTH", "Content width"),
-                        "full" => _t(__CLASS__ . ".BROWSER_WIDTH", "Browser width")
+                        self::WIDTH_CONTAINER => _t(__CLASS__ . ".CONTAINER_WIDTH", "Content width"),
+                        self::WIDTH_FULL => _t(__CLASS__ . ".BROWSER_WIDTH", "Browser width")
                     ]
                 ),
                 DropdownField::create(
                     "Height",
                     _t(__CLASS__ . ".HEIGHT", "Height"),
                     [
-                        "small" => _t(__CLASS__ . ".HEIGHT_SMALL", "Small"),
-                        "medium" => _t(__CLASS__ . ".HEIGHT_MEDIUM", "Medium"),
-                        "large" => _t(__CLASS__ . ".HEIGHT_LARGE", "Large"),
-                        "original" => _t(__CLASS__ . ".HEIGHT_ORIGINAL", "Original")
+                        self::HEIGHT_SMALL => _t(__CLASS__ . ".HEIGHT_SMALL", "Small"),
+                        self::HEIGHT_MEDIUM => _t(__CLASS__ . ".HEIGHT_MEDIUM", "Medium"),
+                        self::HEIGHT_LARGE => _t(__CLASS__ . ".HEIGHT_LARGE", "Large"),
+                        self::HEIGHT_ORIGINAL => _t(__CLASS__ . ".HEIGHT_ORIGINAL", "Original")
                     ]
                 ),
                 UploadField::create(
@@ -96,7 +104,7 @@ class ElementImage extends BaseElement
                 ),
                 TextareaField::create(
                     'Caption',
-                    'Caption'
+                    _t(__CLASS__ . ".CAPTION", "Caption")
                 )
             ]);
         });
