@@ -5,7 +5,7 @@
     <div class="image">
         {$Image}
     </div>
-    <% if $Caption %>
+    <% if $Caption && $ShowCaption %>
         <p class="caption">{$Caption}</p>
     <% end_if %>
 <% end_if %>
