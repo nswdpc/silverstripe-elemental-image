@@ -16,6 +16,7 @@ use SilverStripe\Forms\CheckboxField;
  * @property ?string $Caption
  * @property int $ImageID
  * @method \SilverStripe\Assets\Image Image()
+ * @property bool $HideCaption
  */
 class ElementImage extends BaseElement
 {
@@ -84,6 +85,7 @@ class ElementImage extends BaseElement
         if (empty($types)) {
             $types = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
         }
+
         return array_unique($types);
     }
 
