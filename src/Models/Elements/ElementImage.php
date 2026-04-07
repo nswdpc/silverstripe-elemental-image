@@ -1,4 +1,5 @@
 <?php
+
 namespace NSWDPC\Elemental\Models\Image;
 
 use DNADesign\Elemental\Models\BaseElement;
@@ -31,17 +32,17 @@ class ElementImage extends BaseElement
 
     private static array $allowed_file_types = ["jpg", "jpeg", "gif", "png", "webp"];
 
-    const WIDTH_FULL = 'full';
+    public const WIDTH_FULL = 'full';
 
-    const WIDTH_CONTAINER = 'container';
+    public const WIDTH_CONTAINER = 'container';
 
-    const HEIGHT_SMALL = 'small';
+    public const HEIGHT_SMALL = 'small';
 
-    const HEIGHT_MEDIUM = 'medium';
+    public const HEIGHT_MEDIUM = 'medium';
 
-    const HEIGHT_LARGE = 'large';
+    public const HEIGHT_LARGE = 'large';
 
-    const HEIGHT_ORIGINAL = 'original';
+    public const HEIGHT_ORIGINAL = 'original';
 
     #[\Override]
     public function getType()
