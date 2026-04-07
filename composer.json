@@ -18,11 +18,11 @@
         }
     ],
     "require": {
-        "dnadesign/silverstripe-elemental": "^5",
-        "silverstripe/asset-admin": "^2.4"
+        "dnadesign/silverstripe-elemental": "^6",
+        "silverstripe/asset-admin": "^3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^11.5",
         "friendsofphp/php-cs-fixer": "^3",
         "cambis/silverstripe-rector": "^2",
         "cambis/silverstan": "^2",
