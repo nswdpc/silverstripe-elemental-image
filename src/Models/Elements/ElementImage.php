@@ -7,6 +7,7 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\CheckboxField;
 
 /**
  * ElementImage adds an image with some config
@@ -15,6 +16,7 @@ use SilverStripe\Forms\TextareaField;
  * @property ?string $Caption
  * @property int $ImageID
  * @method \SilverStripe\Assets\Image Image()
+ * @property bool $HideCaption
  */
 class ElementImage extends BaseElement
 {
@@ -54,10 +56,15 @@ class ElementImage extends BaseElement
         "Width" => "Varchar",
         "Height" => "Varchar",
         'Caption' => 'Text',
+        "HideCaption" => "Boolean"
     ];
 
     private static array $has_one = [
         "Image" => Image::class,
+    ];
+
+    private static array $defaults = [
+        "HideCaption" =>  0
     ];
 
     private static array $summary_fields = [
@@ -67,12 +74,18 @@ class ElementImage extends BaseElement
 
     private static array $owns = ["Image"];
 
+    public function ShowCaption(): bool
+    {
+        return $this->HideCaption == 0;
+    }
+
     public function getAllowedFileTypes(): array
     {
         $types = $this->config()->get("allowed_file_types");
         if (empty($types)) {
             $types = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
         }
+
         return array_unique($types);
     }
 
@@ -118,6 +131,10 @@ class ElementImage extends BaseElement
                 TextareaField::create(
                     'Caption',
                     _t(self::class . ".CAPTION", "Caption")
+                ),
+                CheckboxField::create(
+                    "HideCaption",
+                    _t(self::class . ".HIDE_CAPTION", "Hide Caption")
                 )
             ]);
         });
