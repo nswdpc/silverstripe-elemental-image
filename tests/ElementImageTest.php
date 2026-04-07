@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NSWDPC\Elemental\Models\Image\Tests;
 
 use SilverStripe\Dev\SapphireTest;
@@ -8,10 +10,9 @@ use NSWDPC\Elemental\Models\Image\ElementImage;
 
 class ElementImageTest extends SapphireTest
 {
-
     protected $usesDatabase = true;
 
-    public function testAllowedFileTypes()
+    public function testAllowedFileTypes(): void
     {
         $allowed = ["jpg", "jpeg"];
         Config::modify()->set(
@@ -20,10 +21,10 @@ class ElementImageTest extends SapphireTest
             $allowed
         );
         $element = ElementImage::create();
-        $this->assertEquals( $allowed, $element->getAllowedFileTypes() );
+        $this->assertEquals($allowed, $element->getAllowedFileTypes());
     }
 
-    public function testDimensions()
+    public function testDimensions(): void
     {
         $width = ElementImage::WIDTH_CONTAINER;
         $height = ElementImage::HEIGHT_LARGE;
@@ -31,17 +32,17 @@ class ElementImageTest extends SapphireTest
             'Width' => $width,
             'Height' => $height
         ]);
-        $this->assertEquals( $width, $element->Width );
-        $this->assertEquals( $height, $element->Height );
+        $this->assertEquals($width, $element->Width);
+        $this->assertEquals($height, $element->Height);
     }
 
-    public function testCaption()
+    public function testCaption(): void
     {
         $caption = 'Test caption';
         $element = ElementImage::create([
             'Caption' => $caption
         ]);
-        $this->assertEquals( $caption, $element->Caption );
+        $this->assertEquals($caption, $element->Caption);
     }
 
 }
