@@ -26,7 +26,7 @@ class ElementImage extends BaseElement
 
     private static string $title = "Image";
 
-    private static string $description = "Display an image";
+    private static string $class_description = "Display an image";
 
     private static string $singular_name = "Image";
 
